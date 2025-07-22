@@ -1,9 +1,9 @@
+import ProductList from "@/components/shared/product/ProductList";
 import { Button } from "@/components/ui/button";
+import sampleData from "@/db/sample-data";
 
 export default function Home() {
   return (
-    <div className=" bg-amber-100 flex items-center justify-center">
-      <Button variant="destructive">test btn</Button>
-    </div>
+    <ProductList data={sampleData.products} title="Newest Arrival" limit={4} />
   );
 }
