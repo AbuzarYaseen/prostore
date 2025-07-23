@@ -1,9 +1,8 @@
 import ProductList from "@/components/shared/product/ProductList";
-import { Button } from "@/components/ui/button";
-import sampleData from "@/db/sample-data";
+// import sampleData from "@/db/sample-data";
+import { getLatestProducts } from "@/lib/actions/product.actions";
 
-export default function Home() {
-  return (
-    <ProductList data={sampleData.products} title="Newest Arrival" limit={4} />
-  );
+export default async function Home() {
+  const latestProducts = await getLatestProducts();
+  return <ProductList data={latestProducts} title="Newest Arrival" />;
 }
